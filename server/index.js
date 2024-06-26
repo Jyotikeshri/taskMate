@@ -20,7 +20,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://task-mate-lake.vercel.app/log-in",
+      "https://667c701b6e383c3713749783--deft-cheesecake-0cd032.netlify.app/log-in",
     ],
     credentials: true,
   })
