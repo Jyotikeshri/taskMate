@@ -22,9 +22,7 @@ const UsersPage = () => {
   const [selected, setSelected] = useState(null);
   const navigate = useNavigate();
 
-  const { data, isLoading, refetch } = useGetTeamListQuery();
-
-  console.log(selected);
+  const { data, isLoading, refetch, error } = useGetTeamListQuery();
 
   const [userAction] = useUserActionMutation();
   const [deleteUser] = useDeleteUserMutation();
@@ -35,8 +33,8 @@ const UsersPage = () => {
         id: selected?._id,
         isActive: !selected?.isActive,
       });
+
       refetch();
-      navigate("/team");
       toast.success("User Updated Successfully!");
       window.location.reload();
       setSelected(null);

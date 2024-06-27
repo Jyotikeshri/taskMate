@@ -13,11 +13,13 @@ const AddSubTask = ({ open, setOpen, id }) => {
     formState: { errors },
   } = useForm();
 
+  console.log(id);
+
   const [addSbTask] = useCreateSubTaskMutation();
 
   const handleOnSubmit = async (data) => {
     try {
-      const res = await addSbTask({ data, id }).unwrap();
+      const res = await addSbTask({ data, id: id }).unwrap();
       toast.success(res?.message);
       window.location.reload();
       setTimeout(() => {

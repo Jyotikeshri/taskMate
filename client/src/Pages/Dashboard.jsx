@@ -156,7 +156,16 @@ const Dashboard = () => {
       </div>
     );
   }
-  const totals = data?.tasks;
+
+  {
+    console.log(data);
+  }
+
+  const totals = data?.tasks || {
+    completed: 0,
+    "in progress": 0,
+    todo: 0,
+  };
 
   const stats = [
     {
@@ -169,13 +178,13 @@ const Dashboard = () => {
     {
       _id: "2",
       label: "COMPLETED TASK",
-      total: totals["completed"] || 0,
+      total: totals.completed || 0,
       icon: <MdAdminPanelSettings />,
       bg: "bg-[#0f766e]",
     },
     {
       _id: "3",
-      label: "TASK IN PROGRESS ",
+      label: "TASK IN PROGRESS",
       total: totals["in progress"] || 0,
       icon: <LuClipboardEdit />,
       bg: "bg-[#f59e0b]",
@@ -183,7 +192,7 @@ const Dashboard = () => {
     {
       _id: "4",
       label: "TODOS",
-      total: totals["todo"] || 0,
+      total: totals.todo || 0,
       icon: <FaArrowsToDot />,
       bg: "bg-[#be185d]",
     },
