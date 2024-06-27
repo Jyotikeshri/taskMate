@@ -20,8 +20,7 @@ app.use(
   cors({
     origin: [
       "https://taskmate1.netlify.app",
-      "http://localhost:3000",
-      "https://example.com",
+      "https://deft-cheesecake-0cd032.netlify.app",
     ],
     methods: ["PUT", "DELETE", "GET", "POST"],
     credentials: true,
