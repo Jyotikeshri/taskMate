@@ -31,6 +31,11 @@ app.use(cookieParser());
 app.use(morgan("dev"));
 app.use("/api", routes);
 
+// Add a route for the root URL
+app.get("/", (req, res) => {
+  res.send("Welcome to TaskMate API");
+});
+
 app.use(routeNotFoundHandler);
 
 app.use(errorHandler);
