@@ -21,6 +21,7 @@ app.use(
     origin: [
       "https://taskmate1.netlify.app",
       "https://deft-cheesecake-0cd032.netlify.app",
+      "http://localhost:3000",
     ],
     methods: ["PUT", "DELETE", "GET", "POST"],
     credentials: true,
