@@ -18,7 +18,11 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://deft-cheesecake-0cd032.netlify.app"],
+    origin: [
+      "https://taskmate1.netlify.app",
+      "http://localhost:3000",
+      "https://example.com",
+    ],
     methods: ["PUT", "DELETE", "GET", "POST"],
     credentials: true,
   })
